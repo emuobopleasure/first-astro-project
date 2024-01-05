@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+}
+
+:root {
+    --dark-color: #081c15;
+    --dark-bg-text: #d8f3dc;
+    background-color: #95d5b2;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: var(--dark-color);
+        color: var(--dark-bg-text);
+    }
+
+    .button {
+        background-color: #52b788;
+    }
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+main {
+    margin: 2rem 1.5rem;
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+    background: #95d5b2;
+    width: 88vw;
+    top: 0;
+    padding-top: 21px;
+    z-index: 10;
+}
+
+@media (prefers-color-scheme: dark) {
+    .fixed {
+        background: #081c15;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .fixed {
+        width: 94vw;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .fixed {
+        width: 97vw;
+    }
+}
+
+.form-div {
+    width: auto;
+    margin: 0 auto;
+
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    width: 100%;
+
+}
+
+.input-wrapper {
+    display: flex;
+    padding-top: 1rem;
+    gap: 3px;
+    width: 100%;
+}
+
+.form-wrapper .error {
+    color: #ff5151;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+input {
+    border-radius: 10px;
+    height: 2rem;
+    width: 100%;
+    border: 1px solid #40916c;
+    padding-left: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: #d8f3dc;
+    font-size: larger;
+}
+
+input::placeholder {
+    font-size: medium
+}
+
+@media screen and (min-width: 768px) {
+    .form-div {
+        width: 35rem;
+        max-width: 35rem;
+        margin: 0 auto;
+    }
+}
+
+button {
+    all: unset;
+    background-color: #1b4332;
+    color: white;
+    padding: 1px 13px;
+    border-radius: 10px;
+    box-shadow: 0.3em 0.3em 1em rgba(45, 106, 79, 0.3);
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 2px solid #d8f3dc;
+}
+
+button:hover {
+    background-color: #2d6a4f;
+}
+
+.form-div label {
+    font-size: 1.5rem;
+}
+
+.timeline-section {
+    margin-top: 11rem;
+}
+
+#timeline {
+    width: fit-content;
+    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.postContainer {
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    border-radius: 1.3rem;
+    background-color: #d8f3dc;
+    box-shadow: 0.3em 0.3em 1em rgba(45, 106, 79, 0.6);
+    position: relative;
+
+}
+
+.postContainer:hover {
+    background-color: #b7e4c7;
+}
+
+@media screen and (min-width: 768px) {
+    .postContainer {
+        width: 25rem;
+        max-width: 25rem;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .postContainer {
+        background-color: #2d6a4f;
+        box-shadow: none;
+        color: var(--dark-bg-text);
+    }
+
+    .postContainer:hover {
+        background-color: #40916c;
+    }
+}
+
+.delete {
+    position: absolute;
+    right: 16px;
+    top: 7px;
+    border-radius: 0.6rem;
+    padding: 2px 5px;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+.copy {
+    position: absolute;
+    right: 45px;
+    top: 7px;
+    border-radius: 0.6rem;
+    padding: 2px 5px;
+    border: 1px solid #ffffff;
+    cursor: copy;
+}
+
+.a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-bottom: 1px solid #52b788;
+}
+
+.b {
+    font-size: 11px;
+    font-weight: 100;
+    padding-top: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.username {
+    flex-basis: 21%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+    .username {
+        flex-basis: 11%;
+    }
+}
+
+#copyNotification {
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    background-color: rgba(81, 121, 103, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    /* top: 4rem;
+    left: 12vw; */
+}
+
+.modal-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 35vh;
+}
+
+.modal-content {
+    /* margin: 5rem auto; */
+    background-color: #40916c;
+    padding: 1rem 0.5rem;
+    border-radius: 0.5rem;
+}
